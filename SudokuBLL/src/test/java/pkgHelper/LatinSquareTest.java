@@ -83,5 +83,22 @@ public class LatinSquareTest {
 		
 		assertEquals(bExpected, bActual);
 	}
+	
+	@Test
+	public void getRow_Test1()
+	{
+		
+	}
+	@Test
+	public void getColumn_Test1()
+	{
+		
+	}
+	@Test
+	public void isLatinSquare_Test1()
+	{
+		
+	}
+	
 
 }
