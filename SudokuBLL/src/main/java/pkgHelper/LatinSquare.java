@@ -105,62 +105,55 @@ public class LatinSquare {
 
 	}
 
-	public boolean isLatinSquare() {
-
-
-
+	public boolean isLatinSquare() 
+	{
 		boolean isLatinSquare = true;
 
-		for (int i = 0; i < LatinSquare.length; i++) {
+		if (ContainsZero() == true)
 
-			if (hasDuplicates(getRow(i)))
+			return false;
 
-				return false;
+		else {
 
-		}
+			for (int i = 0; i < LatinSquare.length; i++) {
 
+				for (int j = 0; j < LatinSquare.length; j++)
 
+					if (hasDuplicates(getColumn(i)) == true || hasDuplicates(getRow(j)) == true) {
 
-		for (int j = 0; j < LatinSquare.length; j++) {
+						isLatinSquare = false;
 
-			if (hasDuplicates(getColumn(j)))
+						break;
 
-				return false;
-
-		}
-
-
-
-		for (int i = 1; i < LatinSquare.length; i++) {
-
-
-
-			if (!hasAllValues(getRow(0), getRow(i))) {
-
-				return false;
+					}
 
 			}
 
-		}
+			for (int i = 0; i < LatinSquare.length - 1; i++) {
 
+				for (int j = 0; j < LatinSquare.length - 1; j++) {
 
+					if ((hasAllValues(getColumn(i), getRow(j)) == true)
 
-		for (int j = 1; j < LatinSquare.length; j++) {
+							&& (hasAllValues(getColumn(i), getColumn(i + 1)) == true)
 
+							&& (hasAllValues(getRow(j), getRow(j + 1)) == true)) {
 
+						isLatinSquare = true;
 
-			if (!hasAllValues(getColumn(0), getColumn(j))) {
+						break;
 
-				return false;
+					}
+
+				}
 
 			}
 
+
+
 		}
-
-
 
 		return isLatinSquare;
-
 	}
 	
 }
