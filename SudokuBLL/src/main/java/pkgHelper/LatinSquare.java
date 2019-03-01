@@ -82,18 +82,16 @@ public class LatinSquare {
 	public int[] getRow(int iRow)
 	{
 		int[] Row = new int[this.LatinSquare.length];
-
-
-
+		
 		Row = this.LatinSquare[iRow];
-
-
-
+		
 		return Row;
 	}
-	public int[] getColumn(int iCol) {
-
+	public int[] getColumn(int iCol) 
+	{
 		int[] Col = new int[this.LatinSquare.length];
+
+
 
 		for (int row = 0; row < this.LatinSquare.length; row++) {
 
@@ -113,44 +111,35 @@ public class LatinSquare {
 
 			return false;
 
-		else {
+		else 
+		{
 
-			for (int i = 0; i < LatinSquare.length; i++) {
+			for (int i = 0; i < LatinSquare.length; i++) 
+			{
 
 				for (int j = 0; j < LatinSquare.length; j++)
 
-					if (hasDuplicates(getColumn(i)) == true || hasDuplicates(getRow(j)) == true) {
-
+					if (hasDuplicates(getColumn(i)) == true || hasDuplicates(getRow(j)) == true) 
+					{
 						isLatinSquare = false;
-
 						break;
-
 					}
 
 			}
-
-			for (int i = 0; i < LatinSquare.length - 1; i++) {
-
-				for (int j = 0; j < LatinSquare.length - 1; j++) {
-
-					if ((hasAllValues(getColumn(i), getRow(j)) == true)
-
-							&& (hasAllValues(getColumn(i), getColumn(i + 1)) == true)
-
-							&& (hasAllValues(getRow(j), getRow(j + 1)) == true)) {
-
-						isLatinSquare = true;
-
-						break;
-
-					}
-
+			for (int i = 1; i < LatinSquare.length; i++) 
+			{
+				if(!hasAllValues(getRow(0), getRow(i)))
+				{
+					return false;
 				}
-
 			}
-
-
-
+			for (int j = 1; j < LatinSquare.length; j++ )
+			{
+				if (!hasAllValues(getColumn(0), getColumn(j)))
+				{
+					return false;
+				}
+			}
 		}
 
 		return isLatinSquare;
