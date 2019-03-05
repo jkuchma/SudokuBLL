@@ -120,7 +120,7 @@ public class LatinSquareTest {
 
 		
 
-		assertTrue(Arrays.equals(ExpectedCol, Col));
+		assertTrue(Arrays.equals(ExpectedCol, Col)); 
 
 		System.out.println(Arrays.toString(Col));	
 	}
@@ -129,7 +129,7 @@ public class LatinSquareTest {
 	{
 		int[][] arr = { { 1, 2, 3 }, { 2, 3, 1 }, { 3, 1, 2 } };
 
-		LatinSquare ls = new LatinSquare();
+		LatinSquare ls = new LatinSquare(); 
 
 		ls.setLatinSquare(arr);
 
